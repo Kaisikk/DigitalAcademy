@@ -1,6 +1,9 @@
 package task1;
 
-public class Main {
+/**
+ * Да, я знаю, что класс так лучше не называть. Я так не делаю, честно:)
+ */
+public class Task1 {
 
     public static void main(String[] args) {
 
@@ -8,8 +11,14 @@ public class Main {
          String res = "";
          Integer arraySize = 1;
          Integer current = 1;
-         Integer n = Integer.valueOf(args[0]);
-         Integer m = Integer.valueOf(args[1]);
+         Integer n = 0;
+         Integer m = 0;
+         try {
+             n = Integer.valueOf(args[0]);
+             m = Integer.valueOf(args[1]);
+         } catch (Exception ex){
+             System.out.println("Ошибка при запуске программы: На вход должны подаваться 2 числа превышающие 0");
+         }
 
         while(checker){
             // если элемент массива последний и текущая переменная = 1, то выход
@@ -35,8 +44,13 @@ public class Main {
                 }
             }
         }
-        // если попало под условие - вывожу результат
-        System.out.println(res);
+
+        if(n == 1 || m == 1){
+            System.out.print("1");
+        } else {
+            // если попало под условие - вывожу результат
+            System.out.print(res);
+        }
 
     }
 
